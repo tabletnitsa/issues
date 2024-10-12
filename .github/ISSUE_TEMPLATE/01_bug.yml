@@ -1,47 +1,40 @@
-name: 🐛Сообщить о Баге
+name: 🐛Сообщить о Баге🐛
 description: Если что-то работает не так, как должно работать
-title: "[БАГ]: "
-labels: ["bug"]
+title: "[БАГ-РЕПОРТ]: "
+labels: ["bug", "newly"]
 assignees: ["Geardung"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!!!
   - type: checkboxes
     id: new-bug
     attributes:
-      label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for the bug you encountered.
+      label: Есть ли существующий тикет для данной проблемы?
+      description: Пожалуйста, выполните поиск, чтобы узнать, существует ли тикет с обнаруженной вами ошибкой.
       options:
-      - label: I have searched the existing issues
+      - label: Я изучил открытые тикеты
         required: true
   - type: textarea
     id: bug-description
     attributes:
-      label: Description of the bug
-      description: Tell us what bug you encountered and what should have happened
+      label: Описание бага
+      description: Расскажите, где вы обнаружили баг и в чём он заключается
     validations:
       required: true
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps To Reproduce
-      description: Steps to reproduce the behavior.
-      placeholder: Please write the steps in a list form
+      label: Шаги для воспроизведения
+      description: Порядок действий, который приводит к такому поведению.
+      placeholder: Пожалуйста, опишите порядок в виде списка.
     validations:
       required: true
   - type: dropdown
-    id: versions
+    id: stage-version
     attributes:
-      label: Which version of the app are you using?
-      description: If this issue is occurring on more than 1 version of the app, select the appropriate versions.
+      label: Версия приложения
+      description: Если эта ошибка затрагивает несколько версий, то не стесняемся отмечать несколько.
       multiple: true
       options:
-       - 1.0.0
-       - 1.1.0
-       - 1.2.0
-       - 2.0.0
-       - 2.1.0
+       - dev
+       - production
     validations:
       required: true
